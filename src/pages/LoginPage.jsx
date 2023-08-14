@@ -1,8 +1,16 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+  const handleLoginForm = (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    console.log(email, password, "hello from login page");
+    if (email && password) navigate("/dashboard");
+  };
   return (
     <section className=" font-custom h-screen">
       <div className="w-full flex flex-wrap">
@@ -17,12 +25,13 @@ const LoginPage = () => {
             <p className="text-center text-3xl">Welcome.</p>
             <form
               className="flex flex-col pt-3 md:pt-8"
-              onSubmit={(event) => event.preventDefault()}>
+              onSubmit={handleLoginForm}>
               <div className="flex flex-col pt-4">
                 <label htmlFor="email" className="text-lg">
                   Email
                 </label>
                 <input
+                  required
                   type="email"
                   id="email"
                   placeholder="your@email.com"
@@ -35,6 +44,7 @@ const LoginPage = () => {
                   Password
                 </label>
                 <input
+                  required
                   type="password"
                   id="password"
                   placeholder="Password"
@@ -45,7 +55,7 @@ const LoginPage = () => {
               <input
                 type="submit"
                 value="Log In"
-                className="bg-black text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8"
+                className="bg-body1 font-bold transition-all text-lg hover:bg-secondary hover:cursor-pointer p-2 mt-8"
               />
             </form>
             <div className="text-center pt-12 pb-12">
