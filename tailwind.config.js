@@ -13,6 +13,9 @@ export default {
       secondary: "#7AC38F",
       accent: "#88E0D0",
       body1: "#C7EEFF",
+      text1:"#000000",
+      text2: "#FFFFFF",
+      border1: "#614BC3"
     },
     fontFamily: {
       custom: ["DINRoundPro", "sans-serif"],
