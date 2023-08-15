@@ -1,16 +1,24 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { login } from "../reducerSlices/authSlice";
 
 const LoginPage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const handleLoginForm = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    console.log(email, password, "hello from login page");
-    if (email && password) navigate("/dashboard");
+    if (email && password) {
+      const user = { id: 1, username: "Rasel Mahmud" };
+      dispatch(login(user));
+      navigate("/dashboard");
+    }
   };
+
   return (
     <section className=" font-custom h-screen">
       <div className="w-full flex flex-wrap">
