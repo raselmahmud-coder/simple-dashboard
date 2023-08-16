@@ -13,7 +13,7 @@ const LoginPage = () => {
     const email = event.target.email.value;
     const password = event.target.password.value;
     if (email && password) {
-      const user = { id: 1, username: "Rasel Mahmud" };
+      const user = { id: 1, username: "Rasel" };
       dispatch(login(user));
       navigate("/dashboard/profile");
     }

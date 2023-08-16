@@ -35,9 +35,9 @@ const DashboardPage = () => {
             {/* mobile nav menu */}
             <nav className="md:hidden block ">
               <div className="flex items-center justify-between bg-primary flex-wrap bg-gray-800 p-6 fixed w-full z-10 top-0">
-                <div className="flex items-center flex-shrink-0 text-white mr-6">
+                <div className="flex items-center flex-shrink-0 text-text2 mr-6">
                   <a
-                    className="text-white no-underline hover:text-white hover:no-underline"
+                    className="text-text2 no-underline hover:text-text2 hover:no-underline"
                     href="#">
                     <span className="text-2xl pl-2">Logo here</span>
                   </a>
@@ -47,7 +47,7 @@ const DashboardPage = () => {
                   <button
                     onClick={() => setIsClick(!isClick)}
                     id="nav-toggle"
-                    className="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-white hover:border-white">
+                    className="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-text2 hover:border-text2">
                     {isClick ? <RxCross2 /> : <BsThreeDots />}
                   </button>
                 </div>
@@ -60,49 +60,37 @@ const DashboardPage = () => {
                   <ul className="list-reset lg:flex justify-end flex-1 items-center">
                     <li className="mr-3">
                       <a
-                        className="inline-block py-2 px-4 text-white no-underline"
+                        className="inline-block py-2 px-4 text-text2 no-underline"
                         href="#">
                         Active
                       </a>
                     </li>
                     <li className="mr-3">
                       <a
-                        className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+                        className="inline-block no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
                         href="#">
-                        link
+                        link1
                       </a>
                     </li>
                     <li className="mr-3">
                       <a
-                        className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+                        className="inline-block no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
                         href="#">
-                        link
+                        link2
                       </a>
                     </li>
                     <li className="mr-3">
                       <a
-                        className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+                        className="inline-block no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
                         href="#">
-                        link
+                        link3
                       </a>
                     </li>
                   </ul>
                 </div>
               </div>
 
-              {/* <div className="flex justify-end items-center py-2">
-                <BsThreeDots
-                  onClick={handleClick}
-                  className="border rounded-full text-3xl p-1 mr-2 cursor-pointer "
-                />
-                {isClick && (
-                  <ul className="relative top-20 -left-5">
-                    <li>Link 1</li>
-                    <li>Link 2</li>
-                    <li>Link 3</li>
-                  </ul>
-                )}
-              </div> */}
+              
             </nav>
             <Outlet />
           </div>
