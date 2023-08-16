@@ -15,7 +15,7 @@ export default {
       body1: "#C7EEFF",
       text1:"#000000",
       text2: "#FFFFFF",
-      border1: "#614BC3"
+      border1: "#808080"
     },
     fontFamily: {
       custom: ["DINRoundPro", "sans-serif"],

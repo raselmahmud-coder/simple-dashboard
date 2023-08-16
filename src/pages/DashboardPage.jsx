@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
 import { LuFocus } from "react-icons/lu";
 import { BsFillEnvelopeAtFill } from "react-icons/bs";
@@ -11,7 +11,7 @@ const menus = [
   {
     name: "Dashboard",
     icon: <AiOutlineHome className="mr-2" />,
-    link: "/dashboard",
+    link: "profile",
   },
   {
     name: "Message",
@@ -106,8 +106,8 @@ const DashboardPage = () => {
             </nav>
             <Outlet />
           </div>
-
-          <div className="w-full md:w-[15%] bg-primary md:bg-primary px-2 text-center fixed bottom-0 md:top-0 md:left-0 h-16 md:h-screen">
+          {/* Desktop sidebar menu */}
+          <div className="w-full md:w-[15%] border-border1 border px-2 text-center fixed bottom-0 md:top-0 md:left-0 h-16 md:h-screen">
             <div className="md:relative mx-auto lg:float-right lg:px-6">
               <ul className="hidden list-none md:flex flex-row md:flex-col text-center md:text-left">
                 <li className="my-3 flex-1">
@@ -121,12 +121,16 @@ const DashboardPage = () => {
               <ul className="list-none flex flex-row md:flex-col text-center md:text-left">
                 {menus.map((menu) => (
                   <li className="my-3 flex-1" key={menu.name}>
-                    <Link
+                    <NavLink
                       to={menu.link}
-                      className="flex items-center justify-center rounded-lg py-3 px-2 align-middle no-underline text-text1 border-2 border-border1 hover:border-secondary">
+                      className={({ isActive }) => {
+                        return `${
+                          isActive ? "border-secondary" : "border-border1"
+                        } flex items-center justify-center rounded-lg py-3 px-2 align-middle no-underline text-text1 border-2 hover:border-secondary`;
+                      }}>
                       {menu.icon}
                       {menu.name}
-                    </Link>
+                    </NavLink>
                   </li>
                 ))}
               </ul>

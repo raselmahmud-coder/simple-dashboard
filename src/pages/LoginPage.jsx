@@ -15,7 +15,7 @@ const LoginPage = () => {
     if (email && password) {
       const user = { id: 1, username: "Rasel Mahmud" };
       dispatch(login(user));
-      navigate("/dashboard");
+      navigate("/dashboard/profile");
     }
   };
 
