@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 const DashboardProfile = () => {
   const user = useSelector((state) => state.auth.user);
   return (
-    <>
-      <div className="bg-secondary shadow-md rounded-lg p-6 md:w-1/3 w-full mx-auto mt-12 md:mt-6">
+    <section className="p-6">
+      <div className="bg-secondary shadow-md rounded-lg p-3 md:w-1/3 w-full mx-auto mt-[75px] md:mt-6">
         <img
           className="h-52 w-52 mx-auto mb-4"
           src="https://via.placeholder.com/64"
@@ -21,7 +21,7 @@ const DashboardProfile = () => {
           Learn More
         </button>
       </div>
-    </>
+    </section>
   );
 };
 
